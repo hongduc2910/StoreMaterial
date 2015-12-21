@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="header-top">
+        <div class="wrap">
+            <div class="logo">
+                <a href=""><img src="~/images/logo.png" alt="" /></a>
+            </div>
+            <div class="cssmenu">
+                <ul>
+                    <li class="active"><a href="">Login</a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="wrap">
+            <ul class="megamenu skyblue">
+                <li class="active"><a class="color1" href="">Trang chủ</a></li>
+                <li><a class="color1" href="">Công thức</a></li>
+                <li class="grid">
+                    <a class="color4" href="">Nguyên liệu</a>
+                    <div class="megapanel">
+                        <div class="row">
+                            <div class="col6">
+                                <div class="h_nav">
+                                    <h4>Danh mục</h4>
+                                    <ul>
+                                        <li><a href="">Siro</a></li>
+                                        <li><a href="">Cafe</a></li>
+                                        <li><a href="">Bình xịt kem tươi</a></li>
+                                        <li><a href="">Nguyên liệu khác</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="color1" href="">
+                        Dụng cụ
+                    </a>
+                </li>
+                <li><a class="color1" href="">Liên hệ</a></li>
+            </ul>
+        </div>
+    </div>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>*@
+    <div class="container content">
+        <div class="wrap">
+            @RenderBody()
+            <hr />
+        </div>
+        <footer>
+            <p>&copy; @DateTime.Now.Year - khonguyenlieu.com</p>
+        </footer>
+    </div>
+    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+<script>$(document).ready(function () { $(".megamenu").megamenu(); });</script>
+<script type="text/javascript">
+    $(".dropdown img.flag").addClass("flagvisibility");
+
+    $(".dropdown dt a").click(function ()
+    {
+        $(".dropdown dd ul").toggle();
+    });
+
+    $(".dropdown dd ul li a").click(function ()
+    {
+        var text = $(this).html();
+        $(".dropdown dt a span").html(text);
+        $(".dropdown dd ul").hide();
+        $("#result").html("Selected value is: " + getSelectedValue("sample"));
+    });
+
+    function getSelectedValue(id)
+    {
+        return $("#" + id).find("dt a span.value").html();
+    }
+
+    $(document).bind('click', function (e)
+    {
+        var $clicked = $(e.target);
+        if (!$clicked.parents().hasClass("dropdown"))
+            $(".dropdown dd ul").hide();
+    });
+
+
+    $("#flagSwitcher").click(function ()
+    {
+        $(".dropdown img.flag").toggleClass("flagvisibility");
+    });
+    $(".scroll").click(function (event)
+    {
+        event.preventDefault();
+        $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1200);
+    });
+</script>
