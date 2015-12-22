@@ -33,7 +33,10 @@ namespace StoreMaterial
                       "~/Content/etalage.css",
                       "~/Content/form.css",
                       "~/Content/megamenu.css",
-                      "~/Content/style.css"));
+                      "~/Content/style.css",
+                      "~/Content/theme.css",
+                      "~/Content/font-awesome.min.css",
+                      "~/Content/bootstrap.min.css"));
         }
     }
 }
