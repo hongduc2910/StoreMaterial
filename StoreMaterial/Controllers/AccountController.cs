@@ -1,4 +1,5 @@
 ﻿using StoreMaterial.Models.Administrator;
+using StoreMaterial.Models.Administrator.User;
 using StoreMaterial.Repository.Administrator;
 using System.Web.Mvc;
 using System.Web.Security;

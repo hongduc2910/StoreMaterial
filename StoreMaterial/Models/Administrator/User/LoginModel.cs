@@ -1,5 +1,5 @@
 ﻿
-namespace StoreMaterial.Models.Administrator
+namespace StoreMaterial.Models.Administrator.User
 {
     public class LoginModel
     {

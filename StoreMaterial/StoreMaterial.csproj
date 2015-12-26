@@ -227,7 +227,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\NlogHelper.cs" />
-    <Compile Include="Models\Administrator\LoginModel.cs" />
+    <Compile Include="Models\Administrator\User\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Administrator\IUser.cs" />
     <Compile Include="Repository\Administrator\UserService.cs" />
